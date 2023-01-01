@@ -1,11 +1,8 @@
-let favoriteTurtle = "snapping turtle";
-let leastFavoriteTurtle = "box turtle";
-let biggestTurtle = "leather back sea turtle";
-let dontShootTurtles = "don't shoot the snapping turtle";
-let concatenation = "snapping" + "turtle";
-"turtle".length;
-"snapping turtle".length;
-"turtle"[0]
-let turtle = "turtle";
-turtle[1];
-turtle[0] = "T";
+let favoriteStingray = "cow nose stingray";
+favoriteStingray.indexOf("stingray"); //9
+favoriteStingray.indexOf("stringray"); // -1
+
+favoriteStingray.slice(9, 17); //'stingray'
+
+
+favoriteStingray.replace("cow nose", "manta"); // 'manta stingray'
