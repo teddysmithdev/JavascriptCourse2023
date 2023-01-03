@@ -1,14 +1,15 @@
-"don\'t shoot the snapping turtle";
+let myFavoriteBirds = ['mockingbird', 'bluejay', 'sea hawk'];
+// CRUD
+// CREATE
+myFavoriteBirds[myFavoriteBirds.length] = 'sea eagle';
+myFavoriteBirds.push('test');
+myFavoriteBirds.unshift('test')
+//READ
+console.log(myFavoriteBirds[0])
+console.log(myFavoriteBirds[1])
+//UPDATE
+myFavoriteBirds[0] = "macaw";
+//DELETE
+myFavoriteBirds.pop();
+myFavoriteBirds.shift();
 
-'that\'s awesome';
-
-"a backslash looks like this \\";
-
-"they call it \"ecscape\" character"
-
-"this string has two \n line";
-
-let favoriteAnimal = "bullfrog";
-let favoritePlaceToEat = "my house"
-
-`There is a huge ${favoriteAnimal} behind ${favoritePlaceToEat}`;
