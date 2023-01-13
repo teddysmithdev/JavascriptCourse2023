@@ -1,10 +1,14 @@
-let spider = "black widow";
+let liftWeights = true;
+let run = true
 
-
-if(spider === "black widow") {
-    console.log("DO NOT TOUCH");
-} else if (spider === "brown recluse") {
-    console.log("DO NOT TOUCH");
+if(liftWeights === true || run === true) {
+    console.log("you did at least one workout. Son I am proud.");
 } else {
-    console.log("Catch and study");
+    console.log("did not work out at all. FAILURE.")
+}
+
+if(liftWeights === true && run === true) {
+    console.log("LIGHT WEIGHT BABY!");
+} else {
+    console.log("did not do BOTH. YOU ARE A FAILURE");
 }
