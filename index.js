@@ -1,14 +1,41 @@
-let liftWeights = true;
-let run = true
-
-if(liftWeights === true || run === true) {
-    console.log("you did at least one workout. Son I am proud.");
-} else {
-    console.log("did not work out at all. FAILURE.")
+const fishBite = {
+    name: "Brown Chub",
+    class: "K. Bigibbus",
+    nickName: "Topsail Drummer",
+    conservationStatus: "Least Concern"
 }
 
-if(liftWeights === true && run === true) {
-    console.log("LIGHT WEIGHT BABY!");
-} else {
-    console.log("did not do BOTH. YOU ARE A FAILURE");
+//CRUD
+
+//CREATE
+fishBite.isCool = false;
+
+//READ
+console.log(fishBite.name);
+console.log(fishBite["nickName"])
+
+//UPDATE
+fishBite.name = "BROWN CHUB"
+
+//DELETE
+delete fishBite.conservationStatus;
+
+
+
+console.log(fishBite);
+
+//Nested objects + nested arrays within objects
+const fishBiteExample2 = {
+    name: "Brown Chub",
+    class: "K. Bigibbus",
+    nickName: ['Grey Chub', 'Topsail Drummer'],
+    conservationStatus: "Least Concern",
+    metaData: {
+        picture: "http://wikipedia.org/brownchub",
+        longitude: "34'234'",
+        latitude: "23'24235'"
+    }
 }
+
+console.log(fishBiteExample2.nickName[0])
+console.log(fishBiteExample2.metaData.latitude)
