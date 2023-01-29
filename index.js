@@ -1,19 +1,31 @@
-for (let i = 1; i <= 10; i++) {
-    console.log('Outer loop:', i);
-    for(let j = 1; j <= 3;j++) {
-        console.log('    Inner Loop', j);
-    }
+let rocks = ["obsidian", "gneiss", "granite", "diamond"];
+
+for(let i = 0; i < rocks.length; i++) {
+    console.log(rocks[i]);
 }
 
-const airplanes = [
-    ['777', 'dc-10', 'bombadier'],
-    ['learjet', 'g6', 'gulstream']
-]
+for(let rock in rocks) {
+    console.log(rock);
+}
 
-for(let i = 0; i < airplanes.length; i++) {
-    let row = airplanes[i];
-    console.log(row);
-    for(let j = 0; j < row.length; j++) {
-        console.log(row[j]);
-    }
+for(let rock of rocks) {
+    console.log(rock);
+}
+
+for(let char of 'rocks') {
+    console.log(char);
+}
+
+const rockData = {
+    name: "Abestos",
+    type: "Silicate Minerals",
+    color: "green"
+}
+
+for(let prop of rockData) {
+    console.log(x);
+}
+
+for(let prop in rockData) {
+    console.log(rockData[prop]);
 }
