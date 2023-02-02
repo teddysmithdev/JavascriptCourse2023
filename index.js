@@ -1,24 +1,28 @@
-function clownScream() {
-
-    console.log("GYAAAAAAAAAAA!!!!!")
-
+function functionScope() {
+    var value = 0;
 }
 
-function scream(words) {
-    console.log(words);
+if(true) {
+    var value = 0;
 }
 
-function scream1(words) {
-    return words;
+for(let i = 0; i < 10; i++) {
+    console.log(i);
 }
+console.log("END " + i)
 
-function scream2(words, isLoud) {
-    if(isLoud === true) {
-        return words.toUpperCase();
-    } else if (isLoud === false) {
-        return words.toLowerCase();
-    } else {
-        return words;
+functionScope();
+console.log(value);
+
+function outer() {
+    let outerValue = 'outer value';
+
+    function inner() {
+        let innerValue = 'inner value';
+        console.log(outerValue);
     }
+    inner();
+    console.log(innerValue);
 }
 
+outer();
