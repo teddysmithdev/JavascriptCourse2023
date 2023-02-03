@@ -1,23 +1,32 @@
-// Normal function
+// This
+console.log("Global")
+console.log(this);
 
-const getWords = function(words) {
-    return words;
+function logDelarationThis() {
+    console.log("Declaration:")
+    console.log(this);
 }
 
-const runLoop = function() {
-    for(let i = 0; i < 10; i++) {
-        console.log("function ran");
+const logExpressionThis = function() {
+    console.log("Expression:");
+    console.log(this);
+}
+var ipAddr = '192.168.1.1';
+const util = {
+    ipAddr: '8.8.8.8',
+    logIpAddr() {
+        console.log(`IP Address: ${this.ipAddr}`)
+    },
+    checkBrowser: function() {
+        console.log(window.navigator.userAgent);
+    },
+    logThis() {
+        console.log(this);
     }
 }
 
-// Arrow function
-const getWords1 = words => words;
-
-
-const runLoop2 = () => {
-    for(let i = 0; i < 10; i++) {
-       console.log("function ran");
-    }
-}
-
-() => 1;
+logDelarationThis();
+logExpressionThis();
+util.checkBrowser();
+util.logThis();
+util.logIpAddr();
