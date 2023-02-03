@@ -1,28 +1,23 @@
-function functionScope() {
-    var value = 0;
+// Normal function
+
+const getWords = function(words) {
+    return words;
 }
 
-if(true) {
-    var value = 0;
-}
-
-for(let i = 0; i < 10; i++) {
-    console.log(i);
-}
-console.log("END " + i)
-
-functionScope();
-console.log(value);
-
-function outer() {
-    let outerValue = 'outer value';
-
-    function inner() {
-        let innerValue = 'inner value';
-        console.log(outerValue);
+const runLoop = function() {
+    for(let i = 0; i < 10; i++) {
+        console.log("function ran");
     }
-    inner();
-    console.log(innerValue);
 }
 
-outer();
+// Arrow function
+const getWords1 = words => words;
+
+
+const runLoop2 = () => {
+    for(let i = 0; i < 10; i++) {
+       console.log("function ran");
+    }
+}
+
+() => 1;
