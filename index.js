@@ -1,24 +1,20 @@
-//Callback function
+var declaredLater;
 
-const myFunc1 = (callBackFunc) => {
-    let value = 1;
-    callBackFunc(value);
+console.log(declaredLater);
+
+var declaredLater = "Now it's defined";
+
+console.log(declaredLater);
+
+
+definitionHoisted();
+
+definitionNotHoisted();
+
+function definitionHoisted() {
+    console.log("Definition hoisted!");
 }
 
-// myFunc(function(value) {
-//     console.log(value);
-// });
-
-myFunc1(value => {
-    console.log(value);
-})
-
-
-// Return function from function
-function returnFunction() {
-    return function() { return 1 };
-}
-
-// returnFunction()();
-const myFunc = returnFunction();
-myFunc(); // => 1
+var definitionNotHoisted = function () {
+    console.log("Definition not hoisted!");
+};
