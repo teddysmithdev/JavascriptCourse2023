@@ -1,29 +1,24 @@
-// let redBulls = ["cranberry", "strawberry apricot", "coconut"];
+let numbers = [1, 2, 3];
+let doubledNumbers = [];
 
-// for(var i = 0; i < redBulls.length; i++) {
-//   console.log(redBulls[i]);
-// }
-
-// redBulls.forEach(function(redBull){
-//   console.log(redBull);
-// })
-
-
-let redBulls = [
-  { color: "cranberry", isEmpty: true},
-  { color: "coconut", isEmpty: false}
-];
-
-let redBullArr = [];
-
-function throwAwayRedBulls(arr) {
-  redBulls.forEach(redBull => {
-    if(redBull.isEmpty === true)
-      arr.push(redBull);
-  })
-  console.log(arr);
-  console.log("These are the read bulls to throw away")
+for(let i = 0; i < numbers.length; i++) {
+  doubledNumbers.push(numbers[i]);
 }
 
-throwAwayRedBulls(redBullArr);
+let doubled = numbers.map(number => {
+  return number * 2;
+});
 
+doubled;
+doubledNumbers;
+
+let redBulls = [
+  { flavor: "cranberry", radius: 1, height: 4 },
+  { cranberry: "coconut", radius: 2, height: 7 }
+];
+
+let redbullVolume = redBulls.map(redBull => {
+  return redBull.radius * redBull.height;
+})
+
+console.log(redbullVolume)
