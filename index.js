@@ -1,20 +1,29 @@
-var declaredLater;
+// let redBulls = ["cranberry", "strawberry apricot", "coconut"];
 
-console.log(declaredLater);
+// for(var i = 0; i < redBulls.length; i++) {
+//   console.log(redBulls[i]);
+// }
 
-var declaredLater = "Now it's defined";
+// redBulls.forEach(function(redBull){
+//   console.log(redBull);
+// })
 
-console.log(declaredLater);
 
+let redBulls = [
+  { color: "cranberry", isEmpty: true},
+  { color: "coconut", isEmpty: false}
+];
 
-definitionHoisted();
+let redBullArr = [];
 
-definitionNotHoisted();
-
-function definitionHoisted() {
-    console.log("Definition hoisted!");
+function throwAwayRedBulls(arr) {
+  redBulls.forEach(redBull => {
+    if(redBull.isEmpty === true)
+      arr.push(redBull);
+  })
+  console.log(arr);
+  console.log("These are the read bulls to throw away")
 }
 
-var definitionNotHoisted = function () {
-    console.log("Definition not hoisted!");
-};
+throwAwayRedBulls(redBullArr);
+
