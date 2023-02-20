@@ -1,19 +1,21 @@
-let fighters = [
-  { name: "george st pierrer", wins:26 },
-  { name: "connor mcgregor", wins:22 },
-  { name: "jon jones", wins: 34 }
+let users = [
+  { name: "teddy" },
+  { name: "tina" },
+  { name: "toad man" }
 ];
 
-let filteredFighters = [];
+let user;
 
-for(let i = 0; i < fighters.length; i++){
-  if(fighters[i].wins > 30) {
-    filteredFighters.push(fighters[i]);
+for(let i = 0; i < users.length; i++) {
+  if(users[i].name === "teddy") {
+    user = users[i];
+    break;
   }
 }
 
-console.log(filteredFighters);
+console.log(user);
 
-fighters.filter(function(fighter) {
-  return fighter.wins > 30;
+
+users.find(function(user) {
+  return user.name === "teddy";
 })
