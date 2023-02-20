@@ -1,24 +1,19 @@
-let numbers = [1, 2, 3];
-let doubledNumbers = [];
-
-for(let i = 0; i < numbers.length; i++) {
-  doubledNumbers.push(numbers[i]);
-}
-
-let doubled = numbers.map(number => {
-  return number * 2;
-});
-
-doubled;
-doubledNumbers;
-
-let redBulls = [
-  { flavor: "cranberry", radius: 1, height: 4 },
-  { cranberry: "coconut", radius: 2, height: 7 }
+let fighters = [
+  { name: "george st pierrer", wins:26 },
+  { name: "connor mcgregor", wins:22 },
+  { name: "jon jones", wins: 34 }
 ];
 
-let redbullVolume = redBulls.map(redBull => {
-  return redBull.radius * redBull.height;
-})
+let filteredFighters = [];
 
-console.log(redbullVolume)
+for(let i = 0; i < fighters.length; i++){
+  if(fighters[i].wins > 30) {
+    filteredFighters.push(fighters[i]);
+  }
+}
+
+console.log(filteredFighters);
+
+fighters.filter(function(fighter) {
+  return fighter.wins > 30;
+})
