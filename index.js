@@ -1,21 +1,33 @@
-let users = [
-  { name: "teddy" },
-  { name: "tina" },
-  { name: "toad man" }
-];
+//Copy array literal
+const rats = ['fancy rat', 'subway rat', 'albino rat', 'common rat'];
+const luxuryItems = ["rolex", "tom ford glasses"];
+const coolRat = [...rats,...luxuryItems];
 
-let user;
 
-for(let i = 0; i < users.length; i++) {
-  if(users[i].name === "teddy") {
-    user = users[i];
-    break;
-  }
+//Clone
+//Bad
+// let arr1 = [ 1, 2, 3 ];
+// let arr2 = arr1;
+
+//Good
+let arr1 = [ 1, 2, 3 ];
+let arr2 = [ ...arr1 ];
+
+
+//Spread objects
+const rat = {
+  legs: 4,
+  isDangerous: false
 }
 
-console.log(user);
+const luxuryItem = {
+  family: "Submariner Rolex",
+  isBustDown: false
+}
 
-
-users.find(function(user) {
-  return user.name === "teddy";
-})
+const badassRat = {
+  ...rat,
+  ...luxuryItem,
+  isPet: true,
+  adorable: true
+}
