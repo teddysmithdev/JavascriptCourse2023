@@ -1,33 +1,28 @@
-//Copy array literal
-const rats = ['fancy rat', 'subway rat', 'albino rat', 'common rat'];
-const luxuryItems = ["rolex", "tom ford glasses"];
-const coolRat = [...rats,...luxuryItems];
+let a, b, rest;
+[a, b] = [10, 20];
+
+//
+[a, b, c, ...rest] = [100, 200, 300, 400, 500];
+
+({ a, b } = { a: 100, b: 200, c: 300, d: 400, e: 500 });
+({ a, b, ...rest } = { a: 100, b: 200, c: 300, d: 400, e: 500 });
 
 
-//Clone
-//Bad
-// let arr1 = [ 1, 2, 3 ];
-// let arr2 = arr1;
+// Array Destructuring
 
-//Good
-let arr1 = [ 1, 2, 3 ];
-let arr2 = [ ...arr1 ];
+const snakes = ['garden snake', 'cobra', 'rat snake'];
+
+const [gardenSnake, cobra, ratSnake ] = snakes;
 
 
-//Spread objects
-const rat = {
-  legs: 4,
-  isDangerous: false
+//Object destructuring
+const snake = {
+    name: "rat snake",
+    age: 2,
+    state: "ohio"
 }
 
-const luxuryItem = {
-  family: "Submariner Rolex",
-  isBustDown: false
-}
 
-const badassRat = {
-  ...rat,
-  ...luxuryItem,
-  isPet: true,
-  adorable: true
-}
+const { name, age, state } = ohio;
+
+console.log(name, age, city);
