@@ -1,28 +1,25 @@
-let a, b, rest;
-[a, b] = [10, 20];
+class NetworkUtility {
+    ipAddr;
 
-//
-[a, b, c, ...rest] = [100, 200, 300, 400, 500];
+    constructor(ipAddr) {
+        this.ipAddr = ipAddr;
+    }
 
-({ a, b } = { a: 100, b: 200, c: 300, d: 400, e: 500 });
-({ a, b, ...rest } = { a: 100, b: 200, c: 300, d: 400, e: 500 });
-
-
-// Array Destructuring
-
-const snakes = ['garden snake', 'cobra', 'rat snake'];
-
-const [gardenSnake, cobra, ratSnake ] = snakes;
-
-
-//Object destructuring
-const snake = {
-    name: "rat snake",
-    age: 2,
-    state: "ohio"
+    sendRequest() {
+        console.log("success!");
+    }
 }
 
+let pingUtility = new NetworkUtility('4.2.2.2');
+let dnsUtility = new NetworkUtility('8.8.8.8');
 
-const { name, age, state } = ohio;
+console.log(pingUtility);
+console.log(dnsUtility);
 
-console.log(name, age, city);
+console.log(pingUtility.__proto__);
+console.log(NetworkUtility.prototype);
+
+console.log(pingUtility.__proto__ === NetworkUtility.prototype);
+console.log(dnsUtility.__proto__ === NetworkUtility.prototype);
+
+
