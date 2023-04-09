@@ -1,25 +1,72 @@
-class NetworkUtility {
-    ipAddr;
+let myFirstPromise = new Promise((resolve, reject) => {
+    console.log("this works!");
+    resolve();
+    // resolve("hello");
+    reject("shits broke");
+});
 
-    constructor(ipAddr) {
-        this.ipAddr = ipAddr;
+console.log(myFirstPromise);
+
+myFirstPromise.then(() => {
+    console.log("Promise finished!");
+})
+
+// myFirstPromise.then((data) => {
+//     console.log(data);
+// });
+
+
+myFirstPromise.catch((err) => {
+    console.log(err);
+})
+
+console.log("-------Program finished-------")
+
+
+const PENDING = 0;
+const FULFILLED = 1;
+const REJECTED = 2;
+
+function SimplePromise(executor) {
+    let state = PENDING;
+    let value = null;
+    let handlers = [];
+    let catches = [];
+
+    function resolve(result) {
+        if(state !== PENDING) return;
+
+        state = FULFILLED;
+        value = result;
+
+        handlers.forEach((h) => h(value));
     }
 
-    sendRequest() {
-        console.log("success!");
+    function reject(err) {
+        if(state !== PENDING) return;
+
+        state = REJECTED;
+        value = err;
+
+        catches.forEach((c) => c(err));
     }
+
+    this.then = function (callback) {
+        if (state === FULFILLED) {
+            callback(value);
+        } else {
+            handlers.push(callback);
+        }
+    }
+
+    executor(resolve, reject);
 }
 
-let pingUtility = new NetworkUtility('4.2.2.2');
-let dnsUtility = new NetworkUtility('8.8.8.8');
 
-console.log(pingUtility);
-console.log(dnsUtility);
+let promise = new SimplePromise((resolve, reject) => {
+    resolve("data");
+});
 
-console.log(pingUtility.__proto__);
-console.log(NetworkUtility.prototype);
+promise.then(() => console.log("works"));
 
-console.log(pingUtility.__proto__ === NetworkUtility.prototype);
-console.log(dnsUtility.__proto__ === NetworkUtility.prototype);
-
-
+promise.then(() => console.log("works 2"));
